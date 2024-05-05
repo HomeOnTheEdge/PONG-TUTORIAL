@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://b55cjc8ousy2x"]
+
+[ext_resource type="Script" path="res://Player 1.gd" id="1_rfaox"]
+[ext_resource type="Script" path="res://Player 2.gd" id="2_xklcy"]
+[ext_resource type="Script" path="res://Ball.gd" id="3_ceeww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouuge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player 1" type="CharacterBody2D" parent="."]
+script = ExtResource("1_rfaox")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Player 1"]
+offset_right = 20.0
+offset_bottom = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1"]
+position = Vector2(10, 100)
+scale = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_ouuge")
+
+[node name="Player 2" type="CharacterBody2D" parent="."]
+position = Vector2(1129, 0)
+script = ExtResource("2_xklcy")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Player 2"]
+offset_right = 20.0
+offset_bottom = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
+position = Vector2(10, 100)
+scale = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_ouuge")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(559, 74)
+scale = Vector2(1, 0.1)
+script = ExtResource("3_ceeww")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+offset_right = 20.0
+offset_bottom = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(10, 100)
+scale = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_ouuge")
